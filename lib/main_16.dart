@@ -27,43 +27,27 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _numCount = 0;
+  final List<String> _list = [];
 
   @override
   Widget build(BuildContext context) {
-    print(_numCount);
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("flutter"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "$_numCount",
-              style: Theme.of(context).textTheme.headlineLarge,
-            ),
-            const SizedBox(
-              height: 60,
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    _numCount++;
-                  });
-                },
-                child: const Text("增加"))
-          ],
-        ),
-      ),
+      appBar: AppBar(title: const Text("Flutter App")),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          //改变数据必须加上
           setState(() {
-            _numCount++;
+            _list.add("我是一个新增的列表");
           });
         },
         child: const Icon(Icons.add),
+      ),
+      body: ListView(
+        children: _list.map((v) {
+          return ListTile(
+            title: Text(v),
+          );
+        }).toList(),
       ),
     );
   }
