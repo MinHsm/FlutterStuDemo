@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_01/pages/tabs/home_search.dart';
 import 'package:flutter_01/pages/tabs/message.dart';
 import './tabs/home.dart';
 import './tabs/category.dart';
@@ -15,7 +16,7 @@ class Tabs extends StatefulWidget {
 class _TabsState extends State<Tabs> {
   int _currentIndex = 0;
   final List<Widget> _pages = const [
-    HomePage(),
+    HomeSearchPage(),
     CategoryPage(),
     MessagePage(),
     SettingPage(),

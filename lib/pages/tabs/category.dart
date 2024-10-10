@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../search.dart';
 
 class CategoryPage extends StatefulWidget {
   const CategoryPage({super.key});
@@ -10,14 +11,25 @@ class CategoryPage extends StatefulWidget {
 class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: const [
-        ListTile(title: Text("我是一个列表")),
-        ListTile(title: Text("我是一个列表")),
-        ListTile(title: Text("我是一个列表")),
-        ListTile(title: Text("我是一个列表")),
-        ListTile(title: Text("我是一个列表")),
-      ],
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              //跳转路由
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext context) {
+                return const SearchPage();
+              }));
+            },
+            child: const Text("搜索"),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+        ],
+      ),
     );
   }
 }
