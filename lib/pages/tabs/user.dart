@@ -10,8 +10,22 @@ class UserPage extends StatefulWidget {
 class _UserPageState extends State<UserPage> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("用户"),
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(onPressed: () {
+            print("执行跳转");
+            Navigator.pushNamed(context, "/news2");
+          }, child: const Text("登录")),
+          const SizedBox(
+            height: 40,
+          ),
+          ElevatedButton(onPressed: () {
+            Navigator.pushNamed(context, "/register1");
+          }, child: const Text("注册"))
+        ],
+      ),
     );
   }
 }

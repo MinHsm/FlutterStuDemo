@@ -25,7 +25,7 @@ class _HomeSearchPageState extends State<HomeSearchPage> {
                 return const SearchPage();
               }));
             },
-            child: const Text("搜索"),
+            child: const Text("基本路由跳转搜索"),
           ),
           const SizedBox(
             height: 20,
@@ -56,6 +56,42 @@ class _HomeSearchPageState extends State<HomeSearchPage> {
             },
             child: const Text("跳转传值"),
           ),
+          const SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/news2");
+              },
+              child: const Text("命名路由跳转news")),
+          const SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  "/form2",
+                  arguments: {"title": "我是命名路由传值", "aid": 20},
+                );
+              },
+              child: const Text("命名路由跳转传值form2")),
+          const SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(
+                  context,
+                  "/shop",
+                  arguments: {"title": "我是命名路由传值", "aid": 22},
+                );
+              },
+              child: const Text("命名路由跳转传值shop")),
+          const SizedBox(height: 20,),
+          ElevatedButton(onPressed: (){
+            Navigator.pushNamed(context, "/dialog");
+          }, child: const Text("Dialog演示"))
         ],
       ),
     );

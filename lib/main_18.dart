@@ -64,6 +64,7 @@ class _HomePageState extends State<HomePage>
         ],
         //配置controller需要去掉const属性
         bottom: TabBar(
+          tabAlignment: TabAlignment.start,
           indicatorColor: Colors.white,
           indicatorWeight: 2,
           labelColor: Colors.yellow,

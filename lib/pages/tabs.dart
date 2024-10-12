@@ -7,14 +7,24 @@ import './tabs/setting.dart';
 import './tabs/user.dart';
 
 class Tabs extends StatefulWidget {
-  const Tabs({super.key});
+  final int index;
+
+  const Tabs({super.key, this.index = 0});
 
   @override
   State<Tabs> createState() => _TabsState();
 }
 
 class _TabsState extends State<Tabs> {
-  int _currentIndex = 0;
+  late int _currentIndex = 0;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _currentIndex = widget.index;
+  }
+
   final List<Widget> _pages = const [
     HomeSearchPage(),
     CategoryPage(),
@@ -80,7 +90,7 @@ class _TabsState extends State<Tabs> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-          //选中的颜色
+        //选中的颜色
           fixedColor: Colors.red,
           //设置底部菜单的大小
           iconSize: 35,

@@ -28,6 +28,11 @@ class _CategoryPageState extends State<CategoryPage> {
           const SizedBox(
             height: 20,
           ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/search");
+              },
+              child: const Text("命名路由跳转search"))
         ],
       ),
     );
