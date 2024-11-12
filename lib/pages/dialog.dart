@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_01/pages/widget/myDialog.dart';
 
 class DialogPage extends StatefulWidget {
   const DialogPage({super.key});
@@ -125,6 +125,24 @@ class _DialogPageState extends State<DialogPage> {
     print("_toast");
   }
 
+  void _myDialog() async {
+    print("_MyDialog");
+    var result = await showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (context) {
+          return MyDialog(
+            title: "提示！",
+            content: "提示了一个内容",
+            onTap: () {
+              print("close");
+              Navigator.of(context).pop("我是自定义dialog关闭的按钮事件");
+            },
+          );
+        });
+    print(result);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -155,6 +173,10 @@ class _DialogPageState extends State<DialogPage> {
               height: 20,
             ),
             ElevatedButton(onPressed: _toast, child: const Text("Toast")),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(onPressed: _myDialog, child: Text("自定义dialog"))
           ],
         ),
       ),

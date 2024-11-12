@@ -88,10 +88,40 @@ class _HomeSearchPageState extends State<HomeSearchPage> {
                 );
               },
               child: const Text("命名路由跳转传值shop")),
-          const SizedBox(height: 20,),
-          ElevatedButton(onPressed: (){
-            Navigator.pushNamed(context, "/dialog");
-          }, child: const Text("Dialog演示"))
+          const SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/dialog");
+              },
+              child: const Text("Dialog演示")),
+          const SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/pageView");
+              },
+              child: const Text("pageView演示")),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/pageViewBuilder");
+              },
+              child: const Text("pageViewBuilder演示")),
+          const SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/pageViewFull");
+              },
+              child: const Text("PageViewFullPage 演示")),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/pageViewSwiperTime");
+              },
+              child: const Text("PageViewSwiper 演示"))
         ],
       ),
     );

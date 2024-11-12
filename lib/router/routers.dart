@@ -2,6 +2,11 @@
 // ios风格的路由 cupertino.dart 再改成 CupertinoPageRoute
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_01/pages/dialog.dart';
+import 'package:flutter_01/pages/pageView.dart';
+import 'package:flutter_01/pages/pageViewBuilderPage.dart';
+import 'package:flutter_01/pages/pageViewFullPage.dart';
+import 'package:flutter_01/pages/pageViewSwiper.dart';
+import 'package:flutter_01/pages/pageViewSwiperTime.dart';
 import 'package:flutter_01/pages/user/register1.dart';
 import 'package:flutter_01/pages/user/register2.dart';
 import 'package:flutter_01/pages/user/register3.dart';
@@ -20,7 +25,12 @@ Map routes = {
   "/register1": (context) => const Register1Page(),
   "/register2": (context) => const Register2Page(),
   "/register3": (context) => const Register3page(),
-  "/dialog": (context) => const DialogPage()
+  "/dialog": (context) => const DialogPage(),
+  "/pageView": (context) => const PageViewPage(),
+  "/pageViewBuilder": (context) => const PageViewBuilderPage(),
+  "/pageViewFull": (context) => const PageViewFullPage(),
+  "/pageViewSwiper": (context) => const PageViewSwiper(),
+  "/pageViewSwiperTime": (context) => const PageViewSwiperTime()
 };
 
 var onGenerateRoute = (RouteSettings settings) {
@@ -29,7 +39,6 @@ var onGenerateRoute = (RouteSettings settings) {
       routes[name]; // Function (context) => const News2Page()
   if (pageContentBuilder != null) {
     if (settings.arguments != null) {
-
       final Route route = CupertinoPageRoute(
           builder: (context) =>
               pageContentBuilder(context, arguments: settings.arguments));
