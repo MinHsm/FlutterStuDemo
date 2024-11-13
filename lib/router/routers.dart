@@ -5,6 +5,7 @@ import 'package:flutter_01/pages/dialog.dart';
 import 'package:flutter_01/pages/pageView.dart';
 import 'package:flutter_01/pages/pageViewBuilderPage.dart';
 import 'package:flutter_01/pages/pageViewFullPage.dart';
+import 'package:flutter_01/pages/pageViewKeepAlive.dart';
 import 'package:flutter_01/pages/pageViewSwiper.dart';
 import 'package:flutter_01/pages/pageViewSwiperTime.dart';
 import 'package:flutter_01/pages/user/register1.dart';
@@ -30,7 +31,8 @@ Map routes = {
   "/pageViewBuilder": (context) => const PageViewBuilderPage(),
   "/pageViewFull": (context) => const PageViewFullPage(),
   "/pageViewSwiper": (context) => const PageViewSwiper(),
-  "/pageViewSwiperTime": (context) => const PageViewSwiperTime()
+  "/pageViewSwiperTime": (context) => const PageViewSwiperTime(),
+  "/pageViewKeepAlive": (context) => const PageViewKeepAlive()
 };
 
 var onGenerateRoute = (RouteSettings settings) {

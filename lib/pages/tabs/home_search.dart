@@ -121,7 +121,12 @@ class _HomeSearchPageState extends State<HomeSearchPage> {
               onPressed: () {
                 Navigator.pushNamed(context, "/pageViewSwiperTime");
               },
-              child: const Text("PageViewSwiper 演示"))
+              child: const Text("PageViewSwiper 演示")),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/pageViewKeepAlive");
+              },
+              child: const Text("PageViewKeepAlive 演示"))
         ],
       ),
     );
